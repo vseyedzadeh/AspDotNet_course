@@ -16,7 +16,7 @@
             <asp:SqlDataSource ID="countriesSqlDS" runat="server" ConnectionString="<%$ ConnectionStrings:NORTHWNDConnectionString %>" SelectCommand="SELECT DISTINCT [Country] FROM [Customers]"></asp:SqlDataSource>
             <br />
             <br />
-            <asp:GridView ID="customerGridview" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="CustomerID" DataSourceID="AllCustomersSqlDS" ForeColor="Black" GridLines="None">
+            <asp:GridView ID="customerGridview" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="CustomerID" DataSourceID="AllCustomersSqlDS" ForeColor="Black" GridLines="None" Width="315px">
                 <AlternatingRowStyle BackColor="PaleGoldenrod" />
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" />
@@ -41,7 +41,7 @@
             </asp:SqlDataSource>
             <br />
             <br />
-            <asp:DetailsView ID="customerDetailview" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="CustomerID" DataSourceID="customerSqlDS" ForeColor="#333333" GridLines="None" Height="50px" Width="235px">
+            <asp:DetailsView ID="customerDetailview" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="CustomerID" DataSourceID="customerSqlDS" ForeColor="#333333" GridLines="None" Height="50px" Width="246px">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
                 <EditRowStyle BackColor="#7C6F57" />

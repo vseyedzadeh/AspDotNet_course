@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdvancedSearch.aspx" />
     <Content Include="Data\NorthWND.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>NorthWND.designer.cs</LastGenOutput>
@@ -90,6 +91,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvancedSearch.aspx.cs">
+      <DependentUpon>AdvancedSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdvancedSearch.aspx.designer.cs">
+      <DependentUpon>AdvancedSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BAL\BAL_NorthWND.cs" />
     <Compile Include="Data\NorthWND.designer.cs">
       <AutoGen>True</AutoGen>
