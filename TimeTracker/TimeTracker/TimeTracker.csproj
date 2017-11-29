@@ -72,7 +72,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaultMaster.Master" />
     <None Include="packages.config" />
+    <Content Include="Print.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -82,6 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DefaultwithMaster.aspx" />
+    <Content Include="EmployeeList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,13 +97,42 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DefaultMaster.Master.cs">
+      <DependentUpon>DefaultMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultMaster.Master.designer.cs">
+      <DependentUpon>DefaultMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultwithMaster.aspx.cs">
+      <DependentUpon>DefaultwithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultwithMaster.aspx.designer.cs">
+      <DependentUpon>DefaultwithMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\TimeCard.cs" />
     <Compile Include="Models\TimeTrackerDBContext.cs" />
+    <Compile Include="Models\TimeTrackerDBContextInitializer.cs" />
     <Compile Include="Models\TimeTrackerRepository.cs" />
+    <Compile Include="Print.Master.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.Master.designer.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
