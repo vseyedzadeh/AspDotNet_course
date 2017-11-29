@@ -34,6 +34,28 @@ namespace NorthWND_Object.BAL_La
             }
         }
 
-       
+        public List<Customer> getCustomers(String fieldName, String value)
+        {
+            using (var context = new DataClasses1DataContext())
+            {
+                return context.ExecuteQuery<Customer>("SELECT * FROM customers WHERE " + fieldName + " = {0}", value).ToList();
+            }
+        }
+
+        public List<Field> getFields()
+        {
+            //return (from p in typeof(Customer).GetProperties()
+            //        select new Field { Name = p.Name }).ToList();
+            using (var context = new DataClasses1DataContext())
+            {
+                return (from x in context.ExecuteQuery<String>("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('Customers')")
+                        select new Field { Name = x }).ToList();
+            }
+        }
+
+        public class Field
+        {
+            public string Name { get; set; }
+        }
     }
 }

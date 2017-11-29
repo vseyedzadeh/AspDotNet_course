@@ -55,3 +55,5 @@ C:\Users\1795693\source\repos\NorthWND\NorthWND\obj\Debug\NorthWND.csprojResolve
 C:\Users\1795693\source\repos\NorthWND\NorthWND\obj\Debug\NorthWND.csproj.CoreCompileInputs.cache
 C:\Users\1795693\source\repos\NorthWND\NorthWND\obj\Debug\NorthWND.dll
 C:\Users\1795693\source\repos\NorthWND\NorthWND\obj\Debug\NorthWND.pdb
+C:\Users\vseye\Documents\AspDotnet_course\NorthWND\NorthWND\obj\Debug\NorthWND.csprojResolveAssemblyReference.cache
+C:\Users\vseye\Documents\AspDotnet_course\NorthWND\NorthWND\obj\Debug\NorthWND.csproj.CoreCompileInputs.cache
