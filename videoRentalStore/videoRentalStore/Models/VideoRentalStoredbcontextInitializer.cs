@@ -28,13 +28,13 @@ namespace videoRentalStore.Models
                 new Rental { ID = 1 , RentalDate = DateTime.Now, rentedMedia = rentedMediaList}
             };
 
-            tempCustomer.rentalRecords = Rentals;
+            tempCustomer.RentalRecords = Rentals;
 
             context.Customers.Add(tempCustomer);
 
             base.Seed(context);
-            
-           
-                }
+
+
+        }
     }
 }
