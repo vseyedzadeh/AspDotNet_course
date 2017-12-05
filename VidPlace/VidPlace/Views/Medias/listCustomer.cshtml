@@ -1,0 +1,35 @@
+﻿@model VidPlace.ViewModels.customerMediaViewModel
+@{
+    ViewBag.Title = "listCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>The media title is: @Model.media.Name</h2>
+@*<h3>
+    Customer List:<br /><br />
+    @Model.customers[0].Name<br />
+    @Model.customers[1].Name<br />
+    @Model.customers[2].Name<br />
+</h3>*@
+   
+ <hr /><br />
+
+@if (Model.customers.Count == 0)
+{
+    <h2>No customer rented this media before</h2>
+}
+else
+{
+    <h3>Customer List:</h3>
+  <ul>
+   
+
+    @foreach (var item in Model.customers)
+    {
+        <li>@item.Name</li>
+    }
+    
+  </ul>
+}
+
+
