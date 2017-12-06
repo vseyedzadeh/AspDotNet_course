@@ -10,6 +10,14 @@ namespace VidPlace.Controllers
 {
     public class MediasController : Controller
     {
+        public ActionResult Index()
+        {
+            IEnumerable<Media> media = getMedias();
+
+            return View(media);
+
+        }
+
         // GET: Media
         public ActionResult Random()
         {
@@ -110,21 +118,30 @@ namespace VidPlace.Controllers
             return View(viewModelObject);
         }
 
-       /* public ActionResult listCustomer()
+        /* public ActionResult listCustomer()
+         {
+             var tempMedia = new Media() { Name = "Pulp Fiction" };
+             var tempCustomer = new List<Customer>();
+
+
+             var viewModelObject = new customerMediaViewModel()
+             {
+                 media = tempMedia,
+                 customers = tempCustomer
+
+             };
+             return View(viewModelObject);
+         }*/
+
+        private static IEnumerable<Media> getMedias()
         {
-            var tempMedia = new Media() { Name = "Pulp Fiction" };
-            var tempCustomer = new List<Customer>();
-            
-
-            var viewModelObject = new customerMediaViewModel()
+            return new List<Media>
             {
-                media = tempMedia,
-                customers = tempCustomer
-
+                new Media(){ ID = 1, Name = "Inspection" },
+                new Media(){ ID = 2, Name = "Mother"},
+                new Media(){ ID = 3, Name = "Game of thrones"}
             };
-            return View(viewModelObject);
-        }*/
-
+        }
 
     }
 }

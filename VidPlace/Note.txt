@@ -1,0 +1,34 @@
+Each package is licensed to you by its owner. NuGet is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.
+
+Package Manager Console Host Version 4.3.1.4445
+
+Type 'get-help NuGet' to see all available NuGet commands.
+
+PM> enable-migrations
+Checking if the context targets an existing database...
+Code First Migrations enabled for project VidPlace.
+PM> add-migration InitialMigration
+Scaffolding migration 'InitialMigration'.
+The Designer Code for this migration file includes a snapshot of your current Code First model. This snapshot is used to calculate the changes to your model when you scaffold the next migration. If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration InitialMigration' again.
+PM> add-migration InitialMigration -force
+Re-scaffolding migration 'InitialMigration'.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201712061552526_InitialMigration].
+Applying explicit migration: 201712061552526_InitialMigration.
+Running Seed method.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+No pending explicit migrations.
+Running Seed method.
+PM>  add-migration updateCustomerPropertyNewsLetter
+Scaffolding migration 'updateCustomerPropertyNewsLetter'.
+The Designer Code for this migration file includes a snapshot of your current Code First model. This snapshot is used to calculate the changes to your model when you scaffold the next migration. If you make additional changes to your model that you want to include in this migration, then you can re-scaffold it by running 'Add-Migration updateCustomerPropertyNewsLetter' again.
+PM> update-database
+Specify the '-Verbose' flag to view the SQL statements being applied to the target database.
+Applying explicit migrations: [201712061620118_updateCustomerPropertyNewsLetter].
+Applying explicit migration: 201712061620118_updateCustomerPropertyNewsLetter.
+Running Seed method.
+PM> 
+
+
