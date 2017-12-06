@@ -25,7 +25,7 @@ namespace videoRentalStore.Models
 
             List<Rental> Rentals = new List<Rental>
             {
-                new Rental { ID = 1 , RentalDate = DateTime.Now, rentedMedia = rentedMediaList}
+                new Rental { ID = 1 , RentalDate = DateTime.Now, RentedMedia = rentedMediaList}
             };
 
             tempCustomer.RentalRecords = Rentals;

@@ -41,8 +41,10 @@
             <td class="auto-style5" dir="ltr" style="text-align: right">Email Address:</td>
             <td class="auto-style4">
                 <asp:TextBox ID="tbEmail" runat="server" Width="250px" ></asp:TextBox>
-            </td>
+                </td>
             <td class="auto-style3">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Email Address" ForeColor="#990000" ControlToValidate="tbEmail">required</asp:RequiredFieldValidator>
+            &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tbEmail" ErrorMessage="Email Address" ForeColor="#990000" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="checkOut">Must be a valid email address</asp:RegularExpressionValidator>
             </td>
         </tr>
@@ -52,6 +54,8 @@
                 <asp:TextBox ID="tbReentryEmail" runat="server" Width="250px" ></asp:TextBox>
             </td>
             <td class="auto-style3">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Email Re-entry" ForeColor="#990000" ControlToValidate="tbReentryEmail">required</asp:RequiredFieldValidator>
+            &nbsp;
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="tbEmail" ControlToValidate="tbReentryEmail" ErrorMessage="Email Re-entry" ForeColor="#990000" ValidationGroup="checkOut">Must match first email address</asp:CompareValidator>
             </td>
         </tr>
@@ -60,14 +64,16 @@
             <td class="auto-style4">
                 <asp:TextBox ID="tbFirstName" runat="server" Width="250px" ></asp:TextBox>
             </td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3"><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="First Name" ForeColor="#990000" ControlToValidate="tbFirstName">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5" dir="ltr" style="text-align: right">Last Name:</td>
             <td class="auto-style4">
                 <asp:TextBox ID="tbLastName" runat="server" Width="250px" ></asp:TextBox>
             </td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3"><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Last Name" ForeColor="#990000" ControlToValidate="tbLastName">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5" dir="ltr" style="text-align: right">Phone Number:</td>
@@ -75,6 +81,8 @@
                 <asp:TextBox ID="tbPhoneNumber" runat="server" Width="250px" ></asp:TextBox>
             </td>
             <td class="auto-style3">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Phone Number" ForeColor="#990000" ControlToValidate="tbPhoneNumber">required</asp:RequiredFieldValidator>
+            &nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="tbPhoneNumber" ErrorMessage="Phone Number" ForeColor="#990000" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" ValidationGroup="checkOut">Use this format: 123-456-7890</asp:RegularExpressionValidator>
             </td>
         </tr>
@@ -87,20 +95,22 @@
             <td class="auto-style4">
                 <asp:TextBox ID="tbBlAddress" runat="server" Width="250px" ></asp:TextBox>
             </td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3"><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Address" ForeColor="#990000" ControlToValidate="tbBlAddress">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5" style="text-align: right">City:</td>
             <td class="auto-style4">
                 <asp:TextBox ID="tbBlCity" runat="server" Width="250px" ></asp:TextBox>
             </td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3"><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="City" ForeColor="#990000" ControlToValidate="tbBlCity">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5" style="text-align: right">State:</td>
             <td class="auto-style4">
                 <asp:DropDownList ID="ddlBlState" runat="server" Width="250px">
-                    <asp:ListItem Value="Select State">Select State</asp:ListItem>
+                    <asp:ListItem Value="0">Select State</asp:ListItem>
                     <asp:ListItem>Alberta</asp:ListItem>
                     <asp:ListItem Value="BritishColumbia">British Columbia</asp:ListItem>
                     <asp:ListItem>Manitoba</asp:ListItem>
@@ -114,15 +124,16 @@
                 </asp:DropDownList>
             </td>
             <td class="auto-style3">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="ddlBlState" ErrorMessage="State - Billing Address" ForeColor="#990000" ValidationGroup="checkOut" InitialValue="Select State">Required</asp:RequiredFieldValidator>
-            </td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="state" ForeColor="#990000" ControlToValidate="ddlBlState" InitialValue="0">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5" style="text-align: right">Zip Code:</td>
             <td class="auto-style4">
                 <asp:TextBox ID="tbBlZipCode" runat="server" Width="250px" ></asp:TextBox>
             </td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3"><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Zip code" ForeColor="#990000" ControlToValidate="tbBlZipCode">required</asp:RequiredFieldValidator>
+            &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style5"><h3>Shipping Address</h3></td>

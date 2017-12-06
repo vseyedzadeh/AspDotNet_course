@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaulMaster.master.cs" Inherits="videoRentalStore.DefaulMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+       .auto-style1 a {
+            text-decoration:none;
+            color: black;
+        }
+       .auto-style1 a:hover {
+            text-decoration:none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="background-color:royalblue; height:40px;">
+    <div style="float:left; width:60%; text-align:left; font-size:14pt; font-weight:bold; background-color:royalblue; ">
+       
+        <table class="auto-style1">
+            <tr>
+                <td><a href="Default.aspx">Home</a></td>
+                <td><a href="Customers.aspx">Customers</a></td>
+                <td><a href="RentMedia.aspx">Rent Media</a></td>
+                <td><a href="NewCustomer.aspx">New Customer</a></td>
+                <td><a href="NewMedia.aspx">New Media</a></td>
+            </tr>
+        </table>
+       
+    </div>
+    <div style="float:right; width:35%; text-align:center; height:40px; font-size:14pt;">
+        <asp:Label ID="lbDate" runat="server" Text=""></asp:Label>
+    </div>
+            </div>
+    <br />
+    <br />
+        <div>
+            <asp:ContentPlaceHolder ID="mainContentPH" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

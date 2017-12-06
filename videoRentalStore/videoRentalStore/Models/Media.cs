@@ -11,5 +11,12 @@ namespace videoRentalStore.Models
         public string Title { get; set; }
         public string Type { get; set; }
         public string ProductionYear { get; set; }
+
+        public List<Rental> Rentals { get; set; }
+
+        public Media()
+        {
+            Rentals = new List<Rental>();
+        }
     }
 }

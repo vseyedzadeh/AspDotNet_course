@@ -72,6 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaulMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="Customers.aspx.designer.cs">
       <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaulMaster.Master.cs">
+      <DependentUpon>DefaulMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaulMaster.Master.designer.cs">
+      <DependentUpon>DefaulMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

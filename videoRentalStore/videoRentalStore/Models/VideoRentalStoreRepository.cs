@@ -9,8 +9,13 @@ namespace videoRentalStore.Models
     {
         VideoRentalStoreDbContext _context = new VideoRentalStoreDbContext();
 
+        public VideoRentalStoreRepository()
+        {
+            _context.Database.Log = Console.Write;
+        }
+
         /* Get all available Customer */
-        public List<Customer> getAllCustomer()
+        public List<Customer> GetAllCustomer()
         {
             List<Customer> customerList =
                 (from data in _context.Customers
@@ -19,7 +24,7 @@ namespace videoRentalStore.Models
         }
 
         /* Get Customer's Info */
-        public Customer getCustomerById(int CustomerID)
+        public Customer GetCustomerById(int CustomerID)
         {
             Customer customerInfo =
                 (from data in _context.Customers
@@ -44,10 +49,10 @@ namespace videoRentalStore.Models
         }
 
         /*Add New Customer*/
-        public void AddNewCustomer(int ID, string firstName, string lastName, string Address, string phoneNumber)
+        public void AddNewCustomer(string firstName, string lastName, string Address, string phoneNumber)
         {
             Customer c = new Customer();
-            c.ID = ID;
+            
             c.FirstName = firstName;
             c.LastName = lastName;
             c.Address = Address;
@@ -59,17 +64,42 @@ namespace videoRentalStore.Models
 
         }
 
-        public List<Media> getMediaByTitle(string title)
+        public List<Media> GetMediaByTitle(string title)
         {
             List<Media> mediaList =
                 (from data in _context.Medias
-                 where data.Title == title
+                 where data.Title.Contains(title)
                  select data).ToList();
             return mediaList;
         }
 
-        public void addRentalRecord(DateTime rentalDate, List<Media> rentedMedia, int customerID)
+        public void AddRentalRecord(DateTime rentalDate, List<int> rentedMediaIds, int customerID)
         {
+            var medias = (from data in _context.Medias
+                          where rentedMediaIds.Contains(data.ID)
+                          select data).ToList();
+
+            Rental rental = new Rental();
+            rental.RentalDate = rentalDate;
+            rental.RentedMedia = medias;
+
+            _context.Rentals.Add(rental);
+
+            var customer = _context.Customers.Find(customerID);
+            customer.RentalRecords.Add(rental);
+                   
+            _context.SaveChanges();
+        }
+
+        public void AddNewMedia(string title, string type, string productionYear)
+        {
+            Media media = new Media();
+            media.Title = title;
+            media.Type = type;
+            media.ProductionYear = productionYear;
+
+            _context.Medias.Add(media);
+            _context.SaveChanges();
 
         }
     }

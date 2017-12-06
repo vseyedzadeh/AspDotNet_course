@@ -10,60 +10,42 @@
 namespace videoRentalStore {
     
     
-    public partial class RentMedia {
+    public partial class DefaulMaster {
         
         /// <summary>
-        /// tbSearchTitle control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbSearchTitle;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// btnSearchMedia control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchMedia;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblMessaage control.
+        /// lbDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessaage;
+        protected global::System.Web.UI.WebControls.Label lbDate;
         
         /// <summary>
-        /// chbMediaList control.
+        /// mainContentPH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chbMediaList;
-        
-        /// <summary>
-        /// MediaListByTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource MediaListByTitle;
-        
-        /// <summary>
-        /// btnAddtoRentalList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddtoRentalList;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder mainContentPH;
     }
 }
