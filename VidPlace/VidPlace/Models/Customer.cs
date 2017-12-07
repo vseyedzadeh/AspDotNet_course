@@ -19,8 +19,10 @@ namespace VidPlace.Models
         
         public DateTime? BirthDate { get; set; }
 
-        public MembershipType MembershipType { get; set; }
-        public byte MembershipTypeId { get; set; }
+        public MembershipType MembershipType { get; set; }//make foreign key
+
+        [Display(Name = "Membership Type")]//To display labal in form Instead of MembershipTypeId it shows Membership Type
+        public byte MembershipTypeId { get; set; }//to define the column for foreign key
 
 
 

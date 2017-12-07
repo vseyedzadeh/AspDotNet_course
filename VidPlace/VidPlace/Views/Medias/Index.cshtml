@@ -6,19 +6,51 @@
 
 <h3>Media List:</h3>
 
+@*
+    @if (!Model.Any())
+    {
+        <h3>Media Not found</h3>
+    }
+    else
+    {
+        <table class="table table-hover table-bordered">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+
+        </table>
+    }
+*@
+
+
 @if (!Model.Any())
 {
-    <h3>Media Not found</h3>
+    <h3>There are no Media available</h3>
 }
 else
 {
     <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Media ID</th>
+                <th>Media Name</th>
+                
+
+            </tr>
+        </thead>
 
         @foreach (var item in Model)
         {
             <tr>
                 <td>@item.ID</td>
-                <td>@item.Name</td>                
+                @*ActionLink is a redirect*@
+                <td>@Html.ActionLink(item.Name, "Detail", "Medias", new { mediaID = item.ID }, null)</td>
+
             </tr>
         }
 

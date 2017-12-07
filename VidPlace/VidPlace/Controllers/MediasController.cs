@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using VidPlace.Models;
 using VidPlace.ViewModels;
+using System.Data.Entity;
 
 namespace VidPlace.Controllers
 {
@@ -12,10 +13,24 @@ namespace VidPlace.Controllers
     {
         public ActionResult Index()
         {
-            IEnumerable<Media> media = getMedias();
+            var media = _context.Medias.Include(mg => mg.Genre).Include(mt => mt.MediaType).ToList();
+
+           //It used for dummy data
+           // IEnumerable<Media> media = getMedias();
 
             return View(media);
 
+        }
+
+        //Detail action To Desplay Media Detail
+        public ActionResult Detail(int mediaID)
+        {
+            var detail = _context.Medias.Include(mg => mg.Genre).Include(mt => mt.MediaType).SingleOrDefault(m => m.ID == mediaID);
+            
+            if (detail == null)
+                return HttpNotFound();
+
+            return View(detail);
         }
 
         // GET: Media
@@ -133,6 +148,8 @@ namespace VidPlace.Controllers
              return View(viewModelObject);
          }*/
 
+        //Retrieve data from DummyData
+         /* 
         private static IEnumerable<Media> getMedias()
         {
             return new List<Media>
@@ -141,6 +158,14 @@ namespace VidPlace.Controllers
                 new Media(){ ID = 2, Name = "Mother"},
                 new Media(){ ID = 3, Name = "Game of thrones"}
             };
+        }*/
+
+        private ApplicationDbContext _context;
+
+        //Class constructor
+        public MediasController()
+        {
+            _context = new ApplicationDbContext();
         }
 
     }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using VidPlace.Models;
 using System.Data.Entity;
+using VidPlace.ViewModels;
 
 namespace VidPlace.Controllers
 {
@@ -37,7 +38,66 @@ namespace VidPlace.Controllers
             return View(customer);
         }
 
-        
+        //Action from Building Form section
+        public ActionResult New()
+        {
+          var viewModel = new CustomerFormModelView()
+            {
+                Membershiptypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
+        }
+
+
+        //Adding a new Customer - http post
+        [HttpPost]
+        public ActionResult Save(Customer customer)
+        {
+            if (customer.ID == 0)
+            {
+                _context.Customers.Add(customer);
+
+            }
+            else
+            {
+                var selectedCustomer = _context.Customers.Single(c => c.ID == customer.ID);
+                /*
+                 *TryUpdateModel(selectedcustomer)
+                 * this the default to update used by Ms but has security problem
+                 * work around used mapper
+                 */
+                selectedCustomer.Name = customer.Name;
+                selectedCustomer.Address = customer.Address;
+                selectedCustomer.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+                selectedCustomer.MembershipTypeId = customer.MembershipTypeId;
+            }
+            
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Customers");
+
+        }
+
+
+        //Edit Action To edit a customer
+        public ActionResult Edit(int id)
+        {
+            var selectedCustomer = _context.Customers.SingleOrDefault(c => c.ID == id);
+
+            if (selectedCustomer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormModelView
+            {
+                Customer = selectedCustomer,
+                Membershiptypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
+
+        }
+
          
         //Temp method to provide dummy data
       /*  private static IEnumerable<Customer> getCustomerss()

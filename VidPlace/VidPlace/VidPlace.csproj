@@ -246,15 +246,42 @@
     <Compile Include="Migrations\201712061855316_ModifyBirthDayColumninCustomerClass.Designer.cs">
       <DependentUpon>201712061855316_ModifyBirthDayColumninCustomerClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712071428112_addGenreMediaTypeTables.cs" />
+    <Compile Include="Migrations\201712071428112_addGenreMediaTypeTables.Designer.cs">
+      <DependentUpon>201712071428112_addGenreMediaTypeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071430573_PopulateGenreTable.cs" />
+    <Compile Include="Migrations\201712071430573_PopulateGenreTable.Designer.cs">
+      <DependentUpon>201712071430573_PopulateGenreTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071444342_PopulateMediaTypesTable.cs" />
+    <Compile Include="Migrations\201712071444342_PopulateMediaTypesTable.Designer.cs">
+      <DependentUpon>201712071444342_PopulateMediaTypesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071452257_AddAnotationToMediaTable.cs" />
+    <Compile Include="Migrations\201712071452257_AddAnotationToMediaTable.Designer.cs">
+      <DependentUpon>201712071452257_AddAnotationToMediaTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.cs" />
+    <Compile Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.Designer.cs">
+      <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.cs" />
+    <Compile Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.Designer.cs">
+      <DependentUpon>201712071825296_dropForeignKeyInCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\MediaType.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormModelView.cs" />
     <Compile Include="ViewModels\customerMediaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +351,8 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Detail.cshtml" />
     <Content Include="Views\Medias\Index.cshtml" />
+    <Content Include="Views\Medias\Detail.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +407,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712061855316_ModifyBirthDayColumninCustomerClass.resx">
       <DependentUpon>201712061855316_ModifyBirthDayColumninCustomerClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071428112_addGenreMediaTypeTables.resx">
+      <DependentUpon>201712071428112_addGenreMediaTypeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071430573_PopulateGenreTable.resx">
+      <DependentUpon>201712071430573_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071444342_PopulateMediaTypesTable.resx">
+      <DependentUpon>201712071444342_PopulateMediaTypesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071452257_AddAnotationToMediaTable.resx">
+      <DependentUpon>201712071452257_AddAnotationToMediaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.resx">
+      <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.resx">
+      <DependentUpon>201712071825296_dropForeignKeyInCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

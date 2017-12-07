@@ -22,6 +22,10 @@ namespace VidPlace.Models
     {
         public DbSet<Customer> Customers { get; set; }
 
+        public DbSet<Media> Medias { get; set; }
+
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
