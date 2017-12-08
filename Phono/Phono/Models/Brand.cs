@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-
-namespace PhoneOnlineShop.Models
+namespace Phono.Models
 {
     public class Brand
     {
-        public byte ID { get; set; }
+        [Key]
+        public byte Id { get; set; }
 
         [Required]
         [MaxLength(255)]

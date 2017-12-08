@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phono", "Phono\Phono.csproj", "{A6174E4B-8FA3-4E7F-81D0-F4ACBC1F27B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6174E4B-8FA3-4E7F-81D0-F4ACBC1F27B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6174E4B-8FA3-4E7F-81D0-F4ACBC1F27B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6174E4B-8FA3-4E7F-81D0-F4ACBC1F27B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6174E4B-8FA3-4E7F-81D0-F4ACBC1F27B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6889B8B5-B22A-46CC-A8D2-B29AFA0B2874}
+	EndGlobalSection
+EndGlobal

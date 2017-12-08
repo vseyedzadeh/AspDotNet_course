@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
-namespace PhoneOnlineShop.Models
+namespace Phono.Models
 {
     public class Phone
     {
-        public byte ID { get; set; }
+        [Key]
+        public byte Id { get; set; }
 
-        [Required][MaxLength(255)]
+        [Required]
+        [MaxLength(255)]
         public string PhoneName { get; set; }
 
         [Required]
         public Brand Brand { get; set; }
-        public byte Brand_ID { get; set; }
+        public byte BrandId { get; set; }
 
         [Required]
         public DateTime DateReleased { get; set; }
@@ -25,6 +27,6 @@ namespace PhoneOnlineShop.Models
 
         [Required]
         public PhoneType PhoneType { get; set; }
-        public byte PhoneType_ID { get; set; }
+        public byte PhoneTypeId { get; set; }
     }
 }

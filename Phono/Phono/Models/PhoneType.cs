@@ -4,18 +4,18 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-
-namespace PhoneOnlineShop.Models
+namespace Phono.Models
 {
-    public class Brand
+    public class PhoneType
     {
-        public byte ID { get; set; }
+        public byte Id { get; set; }
 
         [Required]
         [MaxLength(255)]
-        public string BrandName { get; set; }
+        public string Type { get; set; }
 
         [Required]
-        public string CountryOfOrigin { get; set; }
+        [MaxLength(255)]
+        public string OS { get; set; }
     }
 }
