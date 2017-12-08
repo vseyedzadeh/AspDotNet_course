@@ -266,9 +266,13 @@
     <Compile Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.Designer.cs">
       <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.cs" />
-    <Compile Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.Designer.cs">
-      <DependentUpon>201712071825296_dropForeignKeyInCustomerTable.cs</DependentUpon>
+    <Compile Include="Migrations\201712080207573_Remvove-Extra-Field.cs" />
+    <Compile Include="Migrations\201712080207573_Remvove-Extra-Field.Designer.cs">
+      <DependentUpon>201712080207573_Remvove-Extra-Field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712080216065_Update-Field-Type.cs" />
+    <Compile Include="Migrations\201712080216065_Update-Field-Type.Designer.cs">
+      <DependentUpon>201712080216065_Update-Field-Type.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,6 +287,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormModelView.cs" />
     <Compile Include="ViewModels\customerMediaViewModel.cs" />
+    <Compile Include="ViewModels\MediaFormModelView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-Minty.css" />
@@ -308,7 +313,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -353,6 +360,7 @@
     <Content Include="Views\Medias\Index.cshtml" />
     <Content Include="Views\Medias\Detail.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Medias\MediaForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,8 +431,11 @@
     <EmbeddedResource Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.resx">
       <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071825296_dropForeignKeyInCustomerTable.resx">
-      <DependentUpon>201712071825296_dropForeignKeyInCustomerTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712080207573_Remvove-Extra-Field.resx">
+      <DependentUpon>201712080207573_Remvove-Extra-Field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712080216065_Update-Field-Type.resx">
+      <DependentUpon>201712080216065_Update-Field-Type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

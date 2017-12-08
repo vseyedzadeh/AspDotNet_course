@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VidPlace.Models
 {
@@ -19,10 +20,11 @@ namespace VidPlace.Models
         
         public DateTime? BirthDate { get; set; }
 
+        [ForeignKey("MembershipTypeId")]
         public MembershipType MembershipType { get; set; }//make foreign key
 
         [Display(Name = "Membership Type")]//To display labal in form Instead of MembershipTypeId it shows Membership Type
-        public byte MembershipTypeId { get; set; }//to define the column for foreign key
+        public int MembershipTypeId { get; set; }//to define the column for foreign key
 
 
 

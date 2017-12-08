@@ -7,13 +7,13 @@ namespace VidPlace.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class dropForeignKeyInCustomerTable : IMigrationMetadata
+    public sealed partial class UpdateFieldType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dropForeignKeyInCustomerTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateFieldType));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712071825296_dropForeignKeyInCustomerTable"; }
+            get { return "201712080216065_Update-Field-Type"; }
         }
         
         string IMigrationMetadata.Source

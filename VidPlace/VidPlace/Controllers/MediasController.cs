@@ -33,6 +33,54 @@ namespace VidPlace.Controllers
             return View(detail);
         }
 
+        //Action from Building Form section
+        public ActionResult New()
+        {
+            var viewModel = new MediaFormModelView()
+            {
+                MediaTypeList = _context.MediaTypes.ToList(),
+                GenreList = _context.Genres.ToList()
+            };
+
+            return View("MediaForm", viewModel);
+        }
+
+
+        //Adding a new Media - http post
+        [HttpPost]
+        public ActionResult Save(Media media)
+        {
+            if (media.ID == 0)
+            {
+                _context.Medias.Add(media);
+
+            }
+            else
+            {
+                var selectedMedia = _context.Medias.Single(c => c.ID == media.ID);
+                /*
+                 *TryUpdateModel(selectedcustomer)
+                 * this the default to update used by Ms but has security problem
+                 * work around used mapper
+                 */
+                selectedMedia.Name = media.Name;
+                selectedMedia.MediaType = media.MediaType;
+                selectedMedia.ReleaseDate = media.ReleaseDate;
+                selectedMedia.Genre = media.Genre;
+                selectedMedia.NumberInStock = media.NumberInStock;
+                selectedMedia.DateAdded = media.DateAdded;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Medias");
+
+        }
+
+
+
+
+
         // GET: Media
         public ActionResult Random()
         {
