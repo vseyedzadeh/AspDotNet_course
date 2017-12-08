@@ -64,9 +64,9 @@ namespace VidPlace.Controllers
                  * work around used mapper
                  */
                 selectedMedia.Name = media.Name;
-                selectedMedia.MediaType = media.MediaType;
+                selectedMedia.MediaTypeID = media.MediaTypeID;
                 selectedMedia.ReleaseDate = media.ReleaseDate;
-                selectedMedia.Genre = media.Genre;
+                selectedMedia.GenreID = media.GenreID;
                 selectedMedia.NumberInStock = media.NumberInStock;
                 selectedMedia.DateAdded = media.DateAdded;
             }

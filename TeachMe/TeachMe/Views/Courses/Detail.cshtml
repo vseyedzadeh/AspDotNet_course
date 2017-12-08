@@ -1,0 +1,20 @@
+﻿@model TeachMe.Models.Course
+@{
+    ViewBag.Title = @Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+<ul>
+  
+    <li>Number Of Credits: @Model.NumberOfCredits</li>
+    <li>Maximum Number of Student: @Model.MaximumNumberOfStudents</li>
+    @if (Model.ProvideBy != null)
+    {
+        <li>BirthDay: @Model.ProvideBy</li>
+    }
+    <li>Course Level: @Model.CourseLevel.Name</li>
+    
+
+</ul>

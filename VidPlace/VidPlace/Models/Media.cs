@@ -24,11 +24,13 @@ namespace VidPlace.Models
 
         [Required]
         public MediaType MediaType { get; set; }
-        
+        public int MediaTypeID { get; set; }
+
 
         [Required]
         public Genre Genre { get; set; }
-        
+        public int GenreID { get; set; }
+
 
         //override tostring method
         public override string ToString()

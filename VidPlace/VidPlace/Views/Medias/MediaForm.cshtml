@@ -25,13 +25,13 @@
     
     <div>
         @Html.LabelFor(m => m.media.MediaType)
-        @Html.DropDownListFor(m => m.media.MediaType,
+        @Html.DropDownListFor(m => m.media.MediaTypeID,
           new SelectList(Model.MediaTypeList, "ID", "TypeName"),
           "Select Media Type", new { @class = "form-control" })
     </div>
     <div>
         @Html.LabelFor(m => m.media.Genre)
-        @Html.DropDownListFor(m => m.media.Genre,
+        @Html.DropDownListFor(m => m.media.GenreID,
           new SelectList(Model.GenreList, "ID", "Name"),
           "Select a Genre", new { @class = "form-control" })
     </div>
