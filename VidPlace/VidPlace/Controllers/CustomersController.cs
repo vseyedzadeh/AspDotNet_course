@@ -43,6 +43,7 @@ namespace VidPlace.Controllers
         {
           var viewModel = new CustomerFormModelView()
             {
+                Customer = new Customer(),
                 Membershiptypes = _context.MembershipTypes.ToList()
             };
 
@@ -52,8 +53,21 @@ namespace VidPlace.Controllers
 
         //Adding a new Customer - http post
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            //Server side Validation -start
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormModelView()
+                {
+                    Customer = customer,
+                    Membershiptypes = _context.MembershipTypes.ToList()
+                };
+                return View("CustomerForm", viewModel);
+            }
+
+            //***Server side Validation - end ****
             if (customer.ID == 0)
             {
                 _context.Customers.Add(customer);
@@ -69,6 +83,7 @@ namespace VidPlace.Controllers
                  */
                 selectedCustomer.Name = customer.Name;
                 selectedCustomer.Address = customer.Address;
+                selectedCustomer.BirthDate = customer.BirthDate;
                 selectedCustomer.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
                 selectedCustomer.MembershipTypeId = customer.MembershipTypeId;
             }
