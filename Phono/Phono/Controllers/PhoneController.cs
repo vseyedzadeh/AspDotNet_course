@@ -17,11 +17,21 @@ namespace Phono.Controllers
         {
             _context = new ApplicationDbContext();
         }
+
         // GET: Phone
         public ActionResult Index()
         {
-            var phoneList = _context.Phones.ToList();
-            return View();
+            var phoneList = _context.Phones.OrderByDescending(o => o.DateReleased).Include(b => b.Brand).ToList();
+            return View(phoneList);
+        }
+
+        public ActionResult Detail(int phoneId)
+        {
+            var selectedPhone = _context.Phones.Include(c => c.Brand).Include(pt => pt.PhoneType).SingleOrDefault(p => p.Id == phoneId);
+            if (selectedPhone == null)
+                return HttpNotFound();
+
+            return View(selectedPhone);
         }
     }
 }

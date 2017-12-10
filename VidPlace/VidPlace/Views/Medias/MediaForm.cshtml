@@ -11,16 +11,19 @@
     <div class="form-group">
         @Html.LabelFor(m => m.media.Name)
         @Html.TextBoxFor(m => m.media.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.Name)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.media.ReleaseDate)
         @Html.TextBoxFor(m => m.media.ReleaseDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.ReleaseDate)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.media.DateAdded)
         @Html.TextBoxFor(m => m.media.DateAdded, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.DateAdded)
     </div>
     
     <div>
@@ -28,20 +31,29 @@
         @Html.DropDownListFor(m => m.media.MediaTypeID,
           new SelectList(Model.MediaTypeList, "ID", "TypeName"),
           "Select Media Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.MediaTypeID)
     </div>
     <div>
         @Html.LabelFor(m => m.media.Genre)
         @Html.DropDownListFor(m => m.media.GenreID,
           new SelectList(Model.GenreList, "ID", "Name"),
           "Select a Genre", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.GenreID)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.media.NumberInStock)
         @Html.TextBoxFor(m => m.media.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.media.NumberInStock)
     </div>
 
 
     @Html.HiddenFor(m => m.media.ID)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

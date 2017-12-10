@@ -1,0 +1,38 @@
+﻿@model  Phono.ViewModel.BrnadsPhoneViewModel
+@{
+    ViewBag.Title = "AvailablePhone";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Brand.BrandName</h2>
+
+@if (Model.Phone.Count == 0)
+{
+    <h3>There are no Phone available from this brand</h3>
+}
+else
+{
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                
+                <th>Phone Name</th>
+                <th>Phone Type / OS</th>
+                <th>Release Date</th>
+                <th>Screen Size</th>
+                
+            </tr>
+        </thead>
+        @foreach (var item in Model.Phone)
+        {
+            <tr>
+                <td>@item.PhoneName</td>
+                <td>@item.PhoneType.Type / @item.PhoneType.OS</td>
+                <td>@item.DateReleased.ToShortDateString()</td>
+                <td>@item.ScreenSize"</td>
+                
+                
+            </tr>
+        }
+    </table>
+}

@@ -48,8 +48,19 @@ namespace VidPlace.Controllers
 
         //Adding a new Media - http post
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Media media)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MediaFormModelView()
+                {
+                    MediaTypeList = _context.MediaTypes.ToList(),
+                    GenreList = _context.Genres.ToList()
+                };
+                return View("MediaForm", viewModel);
+            }
+
             if (media.ID == 0)
             {
                 _context.Medias.Add(media);

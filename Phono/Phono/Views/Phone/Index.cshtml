@@ -1,8 +1,33 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@model IEnumerable<Phono.Models.Phone>
+ @{
+    ViewBag.Title = "Phone List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Phone List</h2>
+
+@if (!Model.Any())
+{
+    <h3>There are no Phone available</h3>
+}
+else
+{
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>               
+                <th>Phone Name</th>
+                <th>Brand Type</th>
+                <th>Action</th>                
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>                                
+                <td>@item.PhoneName</td>
+                <td>@item.Brand.BrandName</td>
+                <td>@Html.ActionLink("Detail", "Detail", new { phoneId = item.Id })</td>
+            </tr>
+        }
+    </table>
+}
 

@@ -28,5 +28,10 @@ namespace Phono.Models
         [Required]
         public PhoneType PhoneType { get; set; }
         public byte PhoneTypeId { get; set; }
+
+        public override string ToString()
+        {
+            return "Phone name: " + PhoneName ;
+        }
     }
 }

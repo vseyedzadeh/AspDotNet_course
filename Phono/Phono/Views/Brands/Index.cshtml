@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Phono.Models.Brand>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Brand List:</h2>
+
+@if (!Model.Any())
+{
+    <h3>There are no Brands available</h3>
+}
+else
+{
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+               
+                <th>Brand Name</th>
+                <th>Country of Origin</th>
+                
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@Html.ActionLink(item.BrandName, "AvailablePhone", new { brandId = item.Id })</td>
+                <td>@item.CountryOfOrigin</td>
+                
+            </tr>
+        }
+    </table>
+}
+
+

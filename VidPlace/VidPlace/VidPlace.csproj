@@ -278,6 +278,10 @@
     <Compile Include="Migrations\201712081407215_ModifyMediaTable.Designer.cs">
       <DependentUpon>201712081407215_ModifyMediaTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712102206082_AddRangeValidationInMediaTable.cs" />
+    <Compile Include="Migrations\201712102206082_AddRangeValidationInMediaTable.Designer.cs">
+      <DependentUpon>201712102206082_AddRangeValidationInMediaTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -444,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712081407215_ModifyMediaTable.resx">
       <DependentUpon>201712081407215_ModifyMediaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712102206082_AddRangeValidationInMediaTable.resx">
+      <DependentUpon>201712102206082_AddRangeValidationInMediaTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

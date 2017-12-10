@@ -19,7 +19,7 @@ namespace VidPlace.Models
         [Required]
         public DateTime DateAdded { get; set; }
 
-        [Required]
+        [Required][Range(0,999, ErrorMessage ="Number In Stock has to be more than zero")]
         public int NumberInStock { get; set; }
 
         [Required]

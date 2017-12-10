@@ -1,0 +1,18 @@
+﻿@model Phono.Models.Phone
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.PhoneName</h2>
+
+<ul>
+    <li><p>Brand Name: @Model.Brand.BrandName | Country Of Origin: @Model.Brand.CountryOfOrigin</p></li>   
+    <li><p>Date Released: @Model.DateReleased.ToShortDateString()</p></li>
+    <li><p>Screen Size: @Model.ScreenSize</p></li>
+    <li><p>Phone Type: @Model.PhoneType.Type | Os: @Model.PhoneType.OS</p></li>
+   
+
+</ul>
+
+
