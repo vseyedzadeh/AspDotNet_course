@@ -6,19 +6,61 @@ using System.Web.Mvc;
 using VidPlace.Models;
 using VidPlace.ViewModels;
 using System.Data.Entity;
+using PagedList;
 
 namespace VidPlace.Controllers
 {
+    // [Authorize]
     public class MediasController : Controller
     {
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index(string searchString, string sortOrder, string currentFilter, int? page)
         {
-            var media = _context.Medias.Include(mg => mg.Genre).Include(mt => mt.MediaType).ToList();
+            
+            //making sort order
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParameter = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.GenreSortParameter = sortOrder == "Genre" ? "Genre_desc" : "Genre";
 
+            if (searchString == null)
+                searchString = currentFilter;
+            else
+                page = 1;
+
+            ViewBag.CurentFilter = searchString;
+
+            //add filter by media name
+            var medias = _context.Medias.Include(mg => mg.Genre);
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                medias = medias.Where(m => m.Name.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    medias = medias.OrderByDescending(m => m.Name);
+                    break;
+
+                case "Genre":
+                    medias = medias.OrderBy(m => m.Genre.Name);
+                    break;
+
+                case "Genre_desc":
+                    medias = medias.OrderByDescending(m => m.Genre.Name);
+                    break;
+
+                default:
+                    medias = medias.OrderBy(m => m.Name);
+                    break;
+            }
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
            //It used for dummy data
            // IEnumerable<Media> media = getMedias();
 
-            return View(media);
+            return View(medias.ToPagedList(pageSize, pageNumber));
 
         }
 
@@ -34,10 +76,12 @@ namespace VidPlace.Controllers
         }
 
         //Action from Building Form section
+        //GET: Medias/New
         public ActionResult New()
         {
             var viewModel = new MediaFormModelView()
             {
+                Media = new Media(),
                 MediaTypeList = _context.MediaTypes.ToList(),
                 GenreList = _context.Genres.ToList()
             };
@@ -51,20 +95,23 @@ namespace VidPlace.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Media media)
         {
+            //server side validation -start
             if (!ModelState.IsValid)
             {
                 var viewModel = new MediaFormModelView()
                 {
+                    Media = media,
                     MediaTypeList = _context.MediaTypes.ToList(),
                     GenreList = _context.Genres.ToList()
                 };
                 return View("MediaForm", viewModel);
             }
+            //Server side validation -end
+
 
             if (media.ID == 0)
             {
                 _context.Medias.Add(media);
-
             }
             else
             {
@@ -87,8 +134,6 @@ namespace VidPlace.Controllers
             return RedirectToAction("Index", "Medias");
 
         }
-
-
 
 
 

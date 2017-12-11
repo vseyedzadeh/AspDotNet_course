@@ -9,7 +9,7 @@
 <ul>
     <li>Genre: @Model.Genre.Name</li>
     <li>Media Type: @Model.MediaType.TypeName</li>
-    <li>Release Date: @Model.ReleaseDate.ToShortTimeString()</li>
+    <li>Release Date: @Model.ReleaseDate.Value.ToShortDateString()</li>
     <li>Date Added: @Model.DateAdded.ToShortTimeString()</li>
     <li>Number In Stock: @Model.NumberInStock</li>
 </ul>

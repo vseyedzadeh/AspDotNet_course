@@ -1,0 +1,4 @@
+--add edit for medias
+--check pagination
+--check filter
+--add role and authorization

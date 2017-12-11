@@ -8,6 +8,7 @@ namespace VidPlace.Controllers
 {
     public class HomeController : Controller
     {
+        [AllowAnonymous]//if we need login for all pages except homepage we will add this line to access to homapage 
         public ActionResult Index()
         {
             return View();

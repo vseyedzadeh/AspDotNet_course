@@ -10,25 +10,35 @@ namespace VidPlace.Models
     {
         public int ID { get; set; }
 
-        [Required][StringLength(255)]
+        [Required]
+        [StringLength(255)]
+        [Display(Name="Media Name")]
         public string Name { get; set; }
 
+        /*
+         * to avoid the datetime element to be pre-initialized
+         * Make it required and add "?" to let be null
+         * */
+        [Display(Name="Release Date")]
         [Required]
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
-        [Required]
         public DateTime DateAdded { get; set; }
 
-        [Required][Range(0,999, ErrorMessage ="Number In Stock has to be more than zero")]
+        [Required]
+        [Range(0,999, ErrorMessage ="Number In Stock has to be more than zero")]
+        [Display(Name="Number is stock")]
         public int NumberInStock { get; set; }
 
-        [Required]
         public MediaType MediaType { get; set; }
+        [Required]
+        [Display(Name="Media Type")]
         public int MediaTypeID { get; set; }
 
 
-        [Required]
         public Genre Genre { get; set; }
+        [Required]
+        [Display(Name="Genre")]
         public int GenreID { get; set; }
 
 

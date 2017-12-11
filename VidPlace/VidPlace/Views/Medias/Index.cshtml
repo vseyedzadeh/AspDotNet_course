@@ -1,4 +1,7 @@
-﻿@model IEnumerable<VidPlace.Models.Media>
+﻿@*@model IEnumerable<VidPlace.Models.Media>*@
+@model PagedList.IPagedList<VidPlace.Models.Media>
+    @using PagedList.Mvc;
+
 @{
     ViewBag.Title = "getMedia";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,6 +29,17 @@
         </table>
     }
 *@
+<p>
+    @Html.ActionLink("New Media", "New", "Medias" , null, new { @class= "btn btn-primary"})
+</p>
+
+@using (Html.BeginForm("Index", "Medias", FormMethod.Get))
+{
+<p>
+    Find Media by Name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+    <input type="submit" value="Search" />
+ </p>
+}
 
 
 @if (!Model.Any())
@@ -35,13 +49,19 @@
 else
 {
     <p>@Html.ActionLink("Create New Media", "New", "Medias")</p>
-    
+
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>Media ID</th>
-                <th>Media Name</th>
                 
+                <th>@Html.ActionLink("Media (Click for Details)", "Index", 
+                   new { sortOrder = ViewBag.NameSortParameter, currentFilter = ViewBag.CurrentFilter})
+                </th>               
+                
+                <th>
+                    @Html.ActionLink("Genre", "Index",
+                   new { sortOrder = ViewBag.GenreSortParameter, currentFilter = ViewBag.CurrentFilter })
+            </th>                  
 
             </tr>
         </thead>
@@ -49,12 +69,18 @@ else
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.ID</td>
+                
                 @*ActionLink is a redirect*@
                 <td>@Html.ActionLink(item.Name, "Detail", "Medias", new { mediaID = item.ID }, null)</td>
+                <td>@item.Genre.Name</td>
 
             </tr>
         }
 
     </table>
 }
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))
+
