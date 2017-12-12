@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{84A8DE11-C86C-4C37-9153-E117617BFCB4}</ProjectGuid>
+    <ProjectGuid>{B6DBBCCE-AB93-4B2C-98DF-05B8321662FB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VidPlace</RootNamespace>
-    <AssemblyName>VidPlace</AssemblyName>
+    <RootNamespace>RecipeManagmentSystem</RootNamespace>
+    <AssemblyName>RecipeManagmentSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -46,10 +46,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -115,12 +127,6 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -190,121 +196,31 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MediasController.cs" />
-    <Compile Include="Controllers\RentalsController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\RecipesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712061552526_InitialMigration.cs" />
-    <Compile Include="Migrations\201712061552526_InitialMigration.Designer.cs">
-      <DependentUpon>201712061552526_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061620118_updateCustomerPropertyNewsLetter.cs" />
-    <Compile Include="Migrations\201712061620118_updateCustomerPropertyNewsLetter.Designer.cs">
-      <DependentUpon>201712061620118_updateCustomerPropertyNewsLetter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061632147_updateMembershipTypeClass.cs" />
-    <Compile Include="Migrations\201712061632147_updateMembershipTypeClass.Designer.cs">
-      <DependentUpon>201712061632147_updateMembershipTypeClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061653329_PopulateMembershipTypes1.cs" />
-    <Compile Include="Migrations\201712061653329_PopulateMembershipTypes1.Designer.cs">
-      <DependentUpon>201712061653329_PopulateMembershipTypes1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061730443_addAnotationToCustomerClass1.cs" />
-    <Compile Include="Migrations\201712061730443_addAnotationToCustomerClass1.Designer.cs">
-      <DependentUpon>201712061730443_addAnotationToCustomerClass1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061732465_addAnotationToCustomerClass2.cs" />
-    <Compile Include="Migrations\201712061732465_addAnotationToCustomerClass2.Designer.cs">
-      <DependentUpon>201712061732465_addAnotationToCustomerClass2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061758443_addAnotationToCustomerClass.cs" />
-    <Compile Include="Migrations\201712061758443_addAnotationToCustomerClass.Designer.cs">
-      <DependentUpon>201712061758443_addAnotationToCustomerClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061825218_addNameToMembershipTypes.cs" />
-    <Compile Include="Migrations\201712061825218_addNameToMembershipTypes.Designer.cs">
-      <DependentUpon>201712061825218_addNameToMembershipTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061828022_UpdateMembershipType.cs" />
-    <Compile Include="Migrations\201712061828022_UpdateMembershipType.Designer.cs">
-      <DependentUpon>201712061828022_UpdateMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061840010_addBirthDayPropertyToCustomerClass.cs" />
-    <Compile Include="Migrations\201712061840010_addBirthDayPropertyToCustomerClass.Designer.cs">
-      <DependentUpon>201712061840010_addBirthDayPropertyToCustomerClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061846544_updateColumnBirthDayInCustomerClass.cs" />
-    <Compile Include="Migrations\201712061846544_updateColumnBirthDayInCustomerClass.Designer.cs">
-      <DependentUpon>201712061846544_updateColumnBirthDayInCustomerClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712061855316_ModifyBirthDayColumninCustomerClass.cs" />
-    <Compile Include="Migrations\201712061855316_ModifyBirthDayColumninCustomerClass.Designer.cs">
-      <DependentUpon>201712061855316_ModifyBirthDayColumninCustomerClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712071428112_addGenreMediaTypeTables.cs" />
-    <Compile Include="Migrations\201712071428112_addGenreMediaTypeTables.Designer.cs">
-      <DependentUpon>201712071428112_addGenreMediaTypeTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712071430573_PopulateGenreTable.cs" />
-    <Compile Include="Migrations\201712071430573_PopulateGenreTable.Designer.cs">
-      <DependentUpon>201712071430573_PopulateGenreTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712071444342_PopulateMediaTypesTable.cs" />
-    <Compile Include="Migrations\201712071444342_PopulateMediaTypesTable.Designer.cs">
-      <DependentUpon>201712071444342_PopulateMediaTypesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712071452257_AddAnotationToMediaTable.cs" />
-    <Compile Include="Migrations\201712071452257_AddAnotationToMediaTable.Designer.cs">
-      <DependentUpon>201712071452257_AddAnotationToMediaTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.cs" />
-    <Compile Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.Designer.cs">
-      <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712080207573_Remvove-Extra-Field.cs" />
-    <Compile Include="Migrations\201712080207573_Remvove-Extra-Field.Designer.cs">
-      <DependentUpon>201712080207573_Remvove-Extra-Field.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712080216065_Update-Field-Type.cs" />
-    <Compile Include="Migrations\201712080216065_Update-Field-Type.Designer.cs">
-      <DependentUpon>201712080216065_Update-Field-Type.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081407215_ModifyMediaTable.cs" />
-    <Compile Include="Migrations\201712081407215_ModifyMediaTable.Designer.cs">
-      <DependentUpon>201712081407215_ModifyMediaTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712121538089_addRentals.cs" />
-    <Compile Include="Migrations\201712121538089_addRentals.Designer.cs">
-      <DependentUpon>201712121538089_addRentals.cs</DependentUpon>
+    <Compile Include="Migrations\201712120333168_InitialMigration.cs" />
+    <Compile Include="Migrations\201712120333168_InitialMigration.Designer.cs">
+      <DependentUpon>201712120333168_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Favorite.cs" />
+    <Compile Include="Models\ShoppingList.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Media.cs" />
-    <Compile Include="Models\MediaType.cs" />
-    <Compile Include="Models\MembershipType.cs" />
-    <Compile Include="Models\Min18YearsIfMember.cs" />
-    <Compile Include="Models\Rental.cs" />
+    <Compile Include="Models\Recipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\CustomerFormModelView.cs" />
-    <Compile Include="ViewModels\customerMediaViewModel.cs" />
-    <Compile Include="ViewModels\MediaFormModelView.cs" />
-    <Compile Include="ViewModels\RentalFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-Minty.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -325,9 +241,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -361,24 +275,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Test\MyView.cshtml" />
-    <Content Include="Views\Test\DeveloperInfo.cshtml" />
-    <Content Include="Views\Medias\Random.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Medias\RandomViewData.cshtml" />
-    <Content Include="Views\Medias\listCustomer.cshtml" />
-    <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\Customers\Detail.cshtml" />
-    <Content Include="Views\Medias\Index.cshtml" />
-    <Content Include="Views\Medias\Detail.cshtml" />
-    <Content Include="Views\Customers\CustomerForm.cshtml" />
-    <Content Include="Views\Medias\MediaForm.cshtml" />
-    <Content Include="Views\Rentals\Create.cshtml" />
-    <Content Include="Views\Medias\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Media\" />
+    <Folder Include="Views\Recipes\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -394,68 +294,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712061552526_InitialMigration.resx">
-      <DependentUpon>201712061552526_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061620118_updateCustomerPropertyNewsLetter.resx">
-      <DependentUpon>201712061620118_updateCustomerPropertyNewsLetter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061632147_updateMembershipTypeClass.resx">
-      <DependentUpon>201712061632147_updateMembershipTypeClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061653329_PopulateMembershipTypes1.resx">
-      <DependentUpon>201712061653329_PopulateMembershipTypes1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061730443_addAnotationToCustomerClass1.resx">
-      <DependentUpon>201712061730443_addAnotationToCustomerClass1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061732465_addAnotationToCustomerClass2.resx">
-      <DependentUpon>201712061732465_addAnotationToCustomerClass2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061758443_addAnotationToCustomerClass.resx">
-      <DependentUpon>201712061758443_addAnotationToCustomerClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061825218_addNameToMembershipTypes.resx">
-      <DependentUpon>201712061825218_addNameToMembershipTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061828022_UpdateMembershipType.resx">
-      <DependentUpon>201712061828022_UpdateMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061840010_addBirthDayPropertyToCustomerClass.resx">
-      <DependentUpon>201712061840010_addBirthDayPropertyToCustomerClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061846544_updateColumnBirthDayInCustomerClass.resx">
-      <DependentUpon>201712061846544_updateColumnBirthDayInCustomerClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712061855316_ModifyBirthDayColumninCustomerClass.resx">
-      <DependentUpon>201712061855316_ModifyBirthDayColumninCustomerClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071428112_addGenreMediaTypeTables.resx">
-      <DependentUpon>201712071428112_addGenreMediaTypeTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071430573_PopulateGenreTable.resx">
-      <DependentUpon>201712071430573_PopulateGenreTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071444342_PopulateMediaTypesTable.resx">
-      <DependentUpon>201712071444342_PopulateMediaTypesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071452257_AddAnotationToMediaTable.resx">
-      <DependentUpon>201712071452257_AddAnotationToMediaTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712071539118_AddAnotationToGenreAndMediaType.resx">
-      <DependentUpon>201712071539118_AddAnotationToGenreAndMediaType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712080207573_Remvove-Extra-Field.resx">
-      <DependentUpon>201712080207573_Remvove-Extra-Field.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712080216065_Update-Field-Type.resx">
-      <DependentUpon>201712080216065_Update-Field-Type.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081407215_ModifyMediaTable.resx">
-      <DependentUpon>201712081407215_ModifyMediaTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712121538089_addRentals.resx">
-      <DependentUpon>201712121538089_addRentals.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712120333168_InitialMigration.resx">
+      <DependentUpon>201712120333168_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -474,9 +314,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51634</DevelopmentServerPort>
+          <DevelopmentServerPort>61337</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51634/</IISUrl>
+          <IISUrl>http://localhost:61337/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
