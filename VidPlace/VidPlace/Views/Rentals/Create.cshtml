@@ -1,0 +1,54 @@
+﻿@model VidPlace.ViewModels.RentalFormViewModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Rental Record</h2>
+
+<h3>@Model.Customer.Name</h3>
+
+
+@using (Html.BeginForm("Create", "Rentals", FormMethod.Get))
+{
+    <p>
+        Search for a Media to Rent: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@if (Model.Medias != null)
+{
+    using (Html.BeginForm("Create", "Rentals"))
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Media</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Medias.Count - 1; i++)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox"
+                                   name="select Media"
+                                   value="@Model.Medias[i].ID" />
+                            @Model.Medias[i].Name
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        @Html.HiddenFor(m => m.Customer.ID)
+        <button type="submit" class="btn btn-primary">Add Rental</button>
+
+
+    }
+}
+
+
+

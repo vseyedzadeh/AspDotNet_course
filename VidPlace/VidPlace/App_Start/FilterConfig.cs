@@ -10,7 +10,7 @@ namespace VidPlace
             filters.Add(new HandleErrorAttribute());
 
             //add this line to put authorization for all pages
-            filters.Add(new AuthorizeAttribute());
+            //filters.Add(new AuthorizeAttribute());
         }
     }
 }

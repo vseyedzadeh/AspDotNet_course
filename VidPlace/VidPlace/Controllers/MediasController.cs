@@ -6,14 +6,17 @@ using System.Web.Mvc;
 using VidPlace.Models;
 using VidPlace.ViewModels;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using PagedList;
+using System.Net;
 
 namespace VidPlace.Controllers
 {
     // [Authorize]
     public class MediasController : Controller
     {
-        [Authorize]
+        //to put authorization on the page Media
+       // [Authorize]
         public ActionResult Index(string searchString, string sortOrder, string currentFilter, int? page)
         {
             
@@ -55,13 +58,13 @@ namespace VidPlace.Controllers
                     medias = medias.OrderBy(m => m.Name);
                     break;
             }
-            int pageSize = 3;
+            int pageSize = 2;
             int pageNumber = (page ?? 1);
-           //It used for dummy data
-           // IEnumerable<Media> media = getMedias();
+            //It used for dummy data
+            // IEnumerable<Media> media = getMedias();
 
-            return View(medias.ToPagedList(pageSize, pageNumber));
-
+            // return View(medias.ToPagedList(pageSize, pageNumber));
+            return View(medias);
         }
 
         //Detail action To Desplay Media Detail
@@ -134,6 +137,52 @@ namespace VidPlace.Controllers
             return RedirectToAction("Index", "Medias");
 
         }
+
+
+        //Add Edit Function
+
+
+        //Delete - GET
+        public ActionResult Delete(int? Id, bool? saveChangesError = false)
+        {
+            if (Id.HasValue)
+            {
+                var media = _context.Medias.Find(Id);
+
+                if (media == null)
+                    return HttpNotFound();
+
+                if (saveChangesError.GetValueOrDefault())
+                {
+                    ViewBag.ErrorMessage = "Delete Failed. Please try again or contact administrator";
+                }
+
+                return View(media);
+            }
+            return HttpNotFound();
+
+        }
+
+        //Delete - POST
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            try {
+                var media = _context.Medias.Find(Id);
+                if (media == null)
+                    return View("Error");//new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+                _context.Medias.Remove(media);
+                _context.SaveChanges();
+            }
+            catch (RetryLimitExceededException)
+            {
+                return RedirectToAction("Delete", new { id = Id, saveChangesError = true});
+            }
+
+            return RedirectToAction("Index");
+        }
+
 
 
 

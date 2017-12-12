@@ -73,6 +73,7 @@ else
                 @*ActionLink is a redirect*@
                 <td>@Html.ActionLink(item.Name, "Detail", "Medias", new { mediaID = item.ID }, null)</td>
                 <td>@item.Genre.Name</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Medias", new { Id = item.ID }, null)</td>
 
             </tr>
         }

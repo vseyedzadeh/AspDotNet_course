@@ -1,4 +1,4 @@
---add edit for medias
+--add edit for medias and customer
 --check pagination
 --check filter
 --add role and authorization

@@ -30,6 +30,7 @@ namespace VidPlace.Models
         [Display(Name = "Membership Type")]//To display labal in form Instead of MembershipTypeId it shows Membership Type
         public int MembershipTypeId { get; set; }//to define the column for foreign key
 
+        public List<Rental> Rentals { get; set; }
 
 
         //override tostring method
