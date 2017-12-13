@@ -6,6 +6,10 @@
 
 <h2>Phone List</h2>
 
+<p>
+    @Html.ActionLink("New Phone", "New", "Phone", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (!Model.Any())
 {
     <h3>There are no Phone available</h3>
@@ -25,7 +29,9 @@ else
             <tr>                                
                 <td>@item.PhoneName</td>
                 <td>@item.Brand.BrandName</td>
-                <td>@Html.ActionLink("Detail", "Detail", new { phoneId = item.Id })</td>
+                <td>@Html.ActionLink("Detail", "Detail", "Phone", new { phoneId = item.ID }, null)
+                    |@Html.ActionLink("Edit", "Edit", "Phone", new { phoneId = item.ID }, null)
+                    |@Html.ActionLink("Delete", "Delete", "Phone", new { id = item.ID}, null)</td>
             </tr>
         }
     </table>

@@ -11,11 +11,11 @@ namespace Phono.Models
         public byte Id { get; set; }
 
         [Required]
-        [MaxLength(255)]
+        [MaxLength(10)]
         public string Type { get; set; }
 
         [Required]
-        [MaxLength(255)]
+        [MaxLength(10)]
         public string OS { get; set; }
     }
 }

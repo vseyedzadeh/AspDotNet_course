@@ -9,13 +9,13 @@ namespace Phono.Models
     public class Brand
     {
         [Key]
-        public byte Id { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [MaxLength(255)]
         public string BrandName { get; set; }
 
-        [Required]
+        
         public string CountryOfOrigin { get; set; }
     }
 }
