@@ -9,29 +9,33 @@ namespace Phono.Models
     public class Phone
     {
         [Key]
-        public byte Id { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [MaxLength(255)]
+        [Display(Name = "Phone Name")]
         public string PhoneName { get; set; }
 
-        [Required]
+
         public Brand Brand { get; set; }
-        public byte BrandId { get; set; }
+        [Display(Name = "Brand")]
+        public int BrandId { get; set; }
 
-        [Required]
-        public DateTime DateReleased { get; set; }
+        [Display(Name = "Date Released")]
+        public DateTime? DateReleased { get; set; }
 
-        [Required]
-        public string ScreenSize { get; set; }
-
-        [Required]
+        [Range(2, 7)]
+        [Display(Name = "Screen size")]
+        public float? ScreenSize { get; set; }
+                        
         public PhoneType PhoneType { get; set; }
+        [Required]
+        [Display(Name = "Phone Type")]
         public byte PhoneTypeId { get; set; }
 
         public override string ToString()
         {
-            return "Phone name: " + PhoneName ;
+            return "Phone name: " + PhoneName;
         }
     }
 }

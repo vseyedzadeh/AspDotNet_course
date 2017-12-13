@@ -205,6 +205,42 @@
     <Compile Include="Migrations\201712080458337_Populate_Phone_Types.Designer.cs">
       <DependentUpon>201712080458337_Populate_Phone_Types.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712122359305_addAnnotationToModels.cs" />
+    <Compile Include="Migrations\201712122359305_addAnnotationToModels.Designer.cs">
+      <DependentUpon>201712122359305_addAnnotationToModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130242298_ModifyPhoneModel.cs" />
+    <Compile Include="Migrations\201712130242298_ModifyPhoneModel.Designer.cs">
+      <DependentUpon>201712130242298_ModifyPhoneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130246241_ChangeTypeIdInModels.cs" />
+    <Compile Include="Migrations\201712130246241_ChangeTypeIdInModels.Designer.cs">
+      <DependentUpon>201712130246241_ChangeTypeIdInModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.cs" />
+    <Compile Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.Designer.cs">
+      <DependentUpon>201712130300438_ModifyBrandIdInPhoneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.cs" />
+    <Compile Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.Designer.cs">
+      <DependentUpon>201712130304375_addAnnotationForBrandInPhoneModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.cs" />
+    <Compile Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.Designer.cs">
+      <DependentUpon>201712130309424_RenameIdToIDInModelPhoneAndBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130354523_FixPhoneId.cs" />
+    <Compile Include="Migrations\201712130354523_FixPhoneId.Designer.cs">
+      <DependentUpon>201712130354523_FixPhoneId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130358487_RecreatePhonesTable.cs" />
+    <Compile Include="Migrations\201712130358487_RecreatePhonesTable.Designer.cs">
+      <DependentUpon>201712130358487_RecreatePhonesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130425380_RecreatePhoneTable.cs" />
+    <Compile Include="Migrations\201712130425380_RecreatePhoneTable.Designer.cs">
+      <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -215,6 +251,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\BrnadsPhoneViewModel.cs" />
+    <Compile Include="ViewModel\PhoneFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -278,6 +315,8 @@
     <Content Include="Views\Phone\Detail.cshtml" />
     <Content Include="Views\Brands\Index.cshtml" />
     <Content Include="Views\Brands\AvailablePhone.cshtml" />
+    <Content Include="Views\Phone\PhoneForm.cshtml" />
+    <Content Include="Views\Phone\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -301,6 +340,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712080458337_Populate_Phone_Types.resx">
       <DependentUpon>201712080458337_Populate_Phone_Types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712122359305_addAnnotationToModels.resx">
+      <DependentUpon>201712122359305_addAnnotationToModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130242298_ModifyPhoneModel.resx">
+      <DependentUpon>201712130242298_ModifyPhoneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130246241_ChangeTypeIdInModels.resx">
+      <DependentUpon>201712130246241_ChangeTypeIdInModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.resx">
+      <DependentUpon>201712130300438_ModifyBrandIdInPhoneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.resx">
+      <DependentUpon>201712130304375_addAnnotationForBrandInPhoneModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.resx">
+      <DependentUpon>201712130309424_RenameIdToIDInModelPhoneAndBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130354523_FixPhoneId.resx">
+      <DependentUpon>201712130354523_FixPhoneId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130358487_RecreatePhonesTable.resx">
+      <DependentUpon>201712130358487_RecreatePhonesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130425380_RecreatePhoneTable.resx">
+      <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

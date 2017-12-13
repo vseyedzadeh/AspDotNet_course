@@ -29,7 +29,7 @@ namespace Phono.Controllers
         public ActionResult AvailablePhone(int brandId)
         {
             //var selectedPhoneList = _context.Phones.Find(brandId);
-            var brand = _context.Brands.FirstOrDefault(b => b.Id == brandId);
+            var brand = _context.Brands.FirstOrDefault(b => b.ID == brandId);
             if (brand == null)
                 return HttpNotFound();
 
