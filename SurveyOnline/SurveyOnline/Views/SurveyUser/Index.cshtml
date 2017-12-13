@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SurveyOnline.Models.Survey>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Available Surveys</h2>
+
+@if (!Model.Any())
+{
+    <p>There are no surveys availble.</p>
+}
+else
+{
+    using (Html.BeginForm("Index", "SurveyUser", FormMethod.Get))
+    {
+        <p>
+            Find Survey by Title: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Search" />
+        </p>
+    }
+
+
+    <table class="table table-hover">
+        <thread>
+            <tr>
+                <th>
+                    @Html.ActionLink("Title", "Index",
+               new { sortOrder = ViewBag.TitleSortParameter, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Topic", "Index",
+               new { sortOrder = ViewBag.TopicSortParameter, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+        </thread>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(item.Title, "AnswerSurvey", "SurveyUser", new { id = item.ID }, null)</td>
+
+                    <td>
+                        
+                        @item.Topic.Name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+

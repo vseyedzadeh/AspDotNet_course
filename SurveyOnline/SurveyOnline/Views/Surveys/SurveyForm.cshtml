@@ -1,0 +1,68 @@
+﻿@model SurveyOnline.ViewModels.SurveyFormViewModel
+@{
+    ViewBag.Title = "SurveyForm";
+}
+
+<h2>Create Survey</h2>
+
+@using (Html.BeginForm("Save", "Surveys"))
+{
+    @Html.ActionLink("Survey List", "SurveyList", "Surveys", null, new { @class="btn btn-primary"}) 
+
+    @Html.ValidationSummary();
+    <div class="form-group">
+        @Html.LabelFor(s => s.Survey.Title)
+        @Html.TextBoxFor(s => s.Survey.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Survey.Title)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.Survey.SurveyQuestion)
+        @Html.TextBoxFor(s => s.Survey.SurveyQuestion, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Survey.SurveyQuestion)
+
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Survey.TopicID)
+        @Html.DropDownListFor(m => m.Survey.TopicID,
+        new SelectList(Model.TopicList, "ID", "Name"),
+        "Select Genre", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Survey.TopicID)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(s => s.Survey.Author)
+        @Html.TextBoxFor(s => s.Survey.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Survey.Author)
+
+    </div>
+
+   <div class="form-group">
+        @Html.LabelFor(s => s.Survey.DeadlineDate)
+        @Html.TextBoxFor(s => s.Survey.DeadlineDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.Survey.DeadlineDate)
+
+    </div>
+
+   
+
+   @Html.HiddenFor(m => m.Survey.ID)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+ 
+    
+
+
+}
+
+@section scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+

@@ -1,0 +1,73 @@
+﻿@model SurveyOnline.ViewModels.AnswerSurveyFormViewModel
+@{
+    ViewBag.Title = "AnswerSurvey";
+}
+
+<h2>@Model.Survey.Title</h2>
+
+@using (Html.BeginForm("Save", "SurveyUser"))
+{
+    @Html.ActionLink("Survey List", "Index", "SurveyUser", null, new { @class = "btn btn-primary" })
+
+    @Html.ValidationSummary();
+
+    <div class="form-group">
+        @Html.DisplayFor(s => s.Survey.SurveyQuestion)
+        
+        @Html.TextAreaFor(s => s.SurveyUser.SurveyAnswer, new { @class = "form-control" })
+        @Html.ValidationMessageFor(s => s.SurveyUser.SurveyAnswer)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.SurveyUser.FirstName)
+        @Html.TextBoxFor(u => u.SurveyUser.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SurveyUser.FirstName)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.SurveyUser.LastName)
+        @Html.TextBoxFor(u => u.SurveyUser.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SurveyUser.LastName)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.SurveyUser.Email)
+        @Html.TextBoxFor(u => u.SurveyUser.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SurveyUser.Email)
+
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(u => u.SurveyUser.Phone)
+        @Html.TextBoxFor(u => u.SurveyUser.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SurveyUser.Phone)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.SurveyUser.AnnualIncome)
+        @Html.TextBoxFor(u => u.SurveyUser.AnnualIncome, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SurveyUser.AnnualIncome)
+
+    </div>
+    
+
+
+    @Html.HiddenFor(s => s.Survey.ID)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    @*  @Html.ActionLink("Back to List", "Index", "Medias")*@
+
+
+
+}
+
+@section scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+

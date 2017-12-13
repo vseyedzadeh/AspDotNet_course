@@ -1,0 +1,29 @@
+﻿@model SurveyOnline.Models.Survey
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Survey</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3>Are you sure you want to delete this Survey?</h3>
+
+<div>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Title)</dt>
+        <dd>@Html.DisplayFor(model => model.Title)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.SurveyQuestion)</dt>
+        <dd>@Html.DisplayFor(model => model.SurveyQuestion)</dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "SurveyList", "Surveys")
+    </div>
+}
+
+
+
