@@ -1,0 +1,18 @@
+﻿@model Phono.Models.Brand
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.BrandName</h2>
+
+<ul>
+    <li><p>Country Name: @Model.CountryOfOrigin</p></li>   
+
+</ul>
+
+<p>
+    @Html.ActionLink("Back To List", "Index", "Brands", null, new { @class = "btn btn-primary" })
+</p>
+
+

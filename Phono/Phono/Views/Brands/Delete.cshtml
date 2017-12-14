@@ -1,0 +1,30 @@
+﻿@model Phono.Models.Brand
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Brand</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3 class="delete-title">Are you sure you want to delete this Brand record?</h3>
+
+<div>
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.BrandName)</dt>
+        <dd>@Html.DisplayFor(model => model.BrandName)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.CountryOfOrigin)</dt>
+        <dd>@Html.DisplayFor(model => model.CountryOfOrigin)</dd>
+        
+    </dl>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+        @Html.ActionLink("Back to List", "Index", "Brands", null, new { @class = "btn btn-default" })
+    </div>
+}
+
+

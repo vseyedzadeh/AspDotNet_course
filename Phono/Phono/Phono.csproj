@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201712140410585_recreateBrandsTable.Designer.cs">
       <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.cs" />
+    <Compile Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.Designer.cs">
+      <DependentUpon>201712141848597_fixscreensizeProblemInPhoneTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -324,6 +328,8 @@
     <Content Include="Views\Phone\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Brands\BrandForm.cshtml" />
+    <Content Include="Views\Brands\Detail.cshtml" />
+    <Content Include="Views\Brands\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712140410585_recreateBrandsTable.resx">
       <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.resx">
+      <DependentUpon>201712141848597_fixscreensizeProblemInPhoneTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

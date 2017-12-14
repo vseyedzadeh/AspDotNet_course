@@ -42,6 +42,15 @@ namespace Phono.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Detail(int brandId)
+        {
+            var brandInDB = _context.Brands.SingleOrDefault(b => b.ID == brandId);
+            if (brandInDB == null)
+                return HttpNotFound();
+
+            return View(brandInDB);
+        }
+
         //New Brand
         public ActionResult New()
         {
@@ -127,6 +136,7 @@ namespace Phono.Controllers
 
             return RedirectToAction("Index");
         }
+
 
     }
 }
