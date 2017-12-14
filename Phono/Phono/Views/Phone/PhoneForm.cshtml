@@ -49,6 +49,7 @@
     @Html.HiddenFor(m => m.Phone.ID)
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Back to List", "Index", "Phone", null, new { @class = "btn btn-default" })
 
 }
 

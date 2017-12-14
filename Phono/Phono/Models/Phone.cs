@@ -16,7 +16,6 @@ namespace Phono.Models
         [Display(Name = "Phone Name")]
         public string PhoneName { get; set; }
 
-
         public Brand Brand { get; set; }
         [Display(Name = "Brand")]
         public int BrandId { get; set; }

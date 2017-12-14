@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelperExtensions.cs" />
     <Compile Include="Migrations\201712080454282_Initial.cs" />
     <Compile Include="Migrations\201712080454282_Initial.Designer.cs">
       <DependentUpon>201712080454282_Initial.cs</DependentUpon>
@@ -240,6 +241,10 @@
     <Compile Include="Migrations\201712130425380_RecreatePhoneTable.cs" />
     <Compile Include="Migrations\201712130425380_RecreatePhoneTable.Designer.cs">
       <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712140410585_recreateBrandsTable.cs" />
+    <Compile Include="Migrations\201712140410585_recreateBrandsTable.Designer.cs">
+      <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -317,6 +322,8 @@
     <Content Include="Views\Brands\AvailablePhone.cshtml" />
     <Content Include="Views\Phone\PhoneForm.cshtml" />
     <Content Include="Views\Phone\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Brands\BrandForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712130425380_RecreatePhoneTable.resx">
       <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712140410585_recreateBrandsTable.resx">
+      <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

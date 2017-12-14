@@ -6,6 +6,10 @@
 
 <h2>Brand List:</h2>
 
+<p>
+    @Html.ActionLink("New Brand", "New", "Brands", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (!Model.Any())
 {
     <h3>There are no Brands available</h3>
@@ -25,8 +29,13 @@ else
         {
             <tr>
                 
-                <td>@Html.ActionLink(item.BrandName, "AvailablePhone", new { brandId = item.Id })</td>
+                <td>@Html.ActionLink(item.BrandName, "AvailablePhone", new { brandId = item.ID })</td>
                 <td>@item.CountryOfOrigin</td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", "Brands", new { brandId = item.ID }, null)
+                |@Html.ActionLink("Edit", "Edit", "Brands", new { brandId = item.ID }, null)
+                |@Html.ActionLink("Delete", "Delete", "Brands", new { id = item.ID }, null)
+            </td>
                 
             </tr>
         }

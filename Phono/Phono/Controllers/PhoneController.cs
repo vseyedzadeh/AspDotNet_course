@@ -83,7 +83,7 @@ namespace Phono.Controllers
         }
 
         //GET : Phone/Edit
-       
+        [Authorize]
         public ActionResult Edit(int phoneId)
         {
             var phoneInDB = _context.Phones.SingleOrDefault(p => p.ID == phoneId);
@@ -102,6 +102,7 @@ namespace Phono.Controllers
         }
 
         //GET : Phone/Delete/1
+        [Authorize]
         public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id.HasValue)
@@ -121,15 +122,16 @@ namespace Phono.Controllers
             return HttpNotFound();
         }
 
-        //POST= : Medias/Delete/1
+        //POST: Phone/Delete/1
         [HttpPost]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             try
             {
                 var phone = _context.Phones.Find(id);
                 if (phone == null)
-                    return View("Error");//new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    return View("Error");
                 _context.Phones.Remove(phone);
                 _context.SaveChanges();
             }

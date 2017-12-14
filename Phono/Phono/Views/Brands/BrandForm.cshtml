@@ -1,0 +1,38 @@
+﻿@model Phono.Models.Brand
+@{
+    ViewBag.Title = "BrandForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BrandForm</h2>
+
+@using (Html.BeginForm("Save", "Brands"))
+{
+    @Html.ValidationSummary();
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.BrandName)
+        @Html.TextBoxFor(m => m.BrandName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.BrandName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CountryOfOrigin)
+        @Html.TextBoxFor(m => m.CountryOfOrigin, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CountryOfOrigin)
+    </div>
+
+
+    @*@Html.HiddenFor(b => b.ID)*@
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+    @Html.ActionLink("Back to List", "Index", "Phone", null, new { @class = "btn btn-default" })
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
