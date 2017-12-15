@@ -8,13 +8,11 @@ namespace Phono.Models
 {
     public class Brand
     {
-        [Key]
         public int ID { get; set; }
 
         [Required]
         [MaxLength(255)]
         public string BrandName { get; set; }
-
         
         public string CountryOfOrigin { get; set; }
     }

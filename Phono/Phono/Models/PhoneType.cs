@@ -8,7 +8,7 @@ namespace Phono.Models
 {
     public class PhoneType
     {
-        public byte Id { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [MaxLength(10)]

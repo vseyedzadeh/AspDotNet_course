@@ -198,57 +198,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelperExtensions.cs" />
-    <Compile Include="Migrations\201712080454282_Initial.cs" />
-    <Compile Include="Migrations\201712080454282_Initial.Designer.cs">
-      <DependentUpon>201712080454282_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201712150036435_InitialMigration.cs" />
+    <Compile Include="Migrations\201712150036435_InitialMigration.Designer.cs">
+      <DependentUpon>201712150036435_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712080458337_Populate_Phone_Types.cs" />
-    <Compile Include="Migrations\201712080458337_Populate_Phone_Types.Designer.cs">
-      <DependentUpon>201712080458337_Populate_Phone_Types.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712122359305_addAnnotationToModels.cs" />
-    <Compile Include="Migrations\201712122359305_addAnnotationToModels.Designer.cs">
-      <DependentUpon>201712122359305_addAnnotationToModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130242298_ModifyPhoneModel.cs" />
-    <Compile Include="Migrations\201712130242298_ModifyPhoneModel.Designer.cs">
-      <DependentUpon>201712130242298_ModifyPhoneModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130246241_ChangeTypeIdInModels.cs" />
-    <Compile Include="Migrations\201712130246241_ChangeTypeIdInModels.Designer.cs">
-      <DependentUpon>201712130246241_ChangeTypeIdInModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.cs" />
-    <Compile Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.Designer.cs">
-      <DependentUpon>201712130300438_ModifyBrandIdInPhoneModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.cs" />
-    <Compile Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.Designer.cs">
-      <DependentUpon>201712130304375_addAnnotationForBrandInPhoneModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.cs" />
-    <Compile Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.Designer.cs">
-      <DependentUpon>201712130309424_RenameIdToIDInModelPhoneAndBrand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130354523_FixPhoneId.cs" />
-    <Compile Include="Migrations\201712130354523_FixPhoneId.Designer.cs">
-      <DependentUpon>201712130354523_FixPhoneId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130358487_RecreatePhonesTable.cs" />
-    <Compile Include="Migrations\201712130358487_RecreatePhonesTable.Designer.cs">
-      <DependentUpon>201712130358487_RecreatePhonesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712130425380_RecreatePhoneTable.cs" />
-    <Compile Include="Migrations\201712130425380_RecreatePhoneTable.Designer.cs">
-      <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712140410585_recreateBrandsTable.cs" />
-    <Compile Include="Migrations\201712140410585_recreateBrandsTable.Designer.cs">
-      <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.cs" />
-    <Compile Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.Designer.cs">
-      <DependentUpon>201712141848597_fixscreensizeProblemInPhoneTable.cs</DependentUpon>
+    <Compile Include="Migrations\201712150044062_PopulatePhoneTypeTable.cs" />
+    <Compile Include="Migrations\201712150044062_PopulatePhoneTypeTable.Designer.cs">
+      <DependentUpon>201712150044062_PopulatePhoneTypeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -348,44 +304,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712080454282_Initial.resx">
-      <DependentUpon>201712080454282_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712150036435_InitialMigration.resx">
+      <DependentUpon>201712150036435_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712080458337_Populate_Phone_Types.resx">
-      <DependentUpon>201712080458337_Populate_Phone_Types.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712122359305_addAnnotationToModels.resx">
-      <DependentUpon>201712122359305_addAnnotationToModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130242298_ModifyPhoneModel.resx">
-      <DependentUpon>201712130242298_ModifyPhoneModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130246241_ChangeTypeIdInModels.resx">
-      <DependentUpon>201712130246241_ChangeTypeIdInModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130300438_ModifyBrandIdInPhoneModel.resx">
-      <DependentUpon>201712130300438_ModifyBrandIdInPhoneModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130304375_addAnnotationForBrandInPhoneModel.resx">
-      <DependentUpon>201712130304375_addAnnotationForBrandInPhoneModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130309424_RenameIdToIDInModelPhoneAndBrand.resx">
-      <DependentUpon>201712130309424_RenameIdToIDInModelPhoneAndBrand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130354523_FixPhoneId.resx">
-      <DependentUpon>201712130354523_FixPhoneId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130358487_RecreatePhonesTable.resx">
-      <DependentUpon>201712130358487_RecreatePhonesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712130425380_RecreatePhoneTable.resx">
-      <DependentUpon>201712130425380_RecreatePhoneTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712140410585_recreateBrandsTable.resx">
-      <DependentUpon>201712140410585_recreateBrandsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141848597_fixscreensizeProblemInPhoneTable.resx">
-      <DependentUpon>201712141848597_fixscreensizeProblemInPhoneTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712150044062_PopulatePhoneTypeTable.resx">
+      <DependentUpon>201712150044062_PopulatePhoneTypeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

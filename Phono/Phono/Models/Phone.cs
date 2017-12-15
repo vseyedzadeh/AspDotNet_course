@@ -8,7 +8,6 @@ namespace Phono.Models
 {
     public class Phone
     {
-        [Key]
         public int ID { get; set; }
 
         [Required]
@@ -30,7 +29,7 @@ namespace Phono.Models
         public PhoneType PhoneType { get; set; }
         [Required]
         [Display(Name = "Phone Type")]
-        public byte PhoneTypeId { get; set; }
+        public int PhoneTypeId { get; set; }
 
         public override string ToString()
         {
