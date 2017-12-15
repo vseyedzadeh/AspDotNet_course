@@ -54,15 +54,20 @@ namespace Phono.Controllers
         //New Brand
         public ActionResult New()
         {
-            return View("BrandForm");
+            var model = new Brand()
+            {
+                ID = 0
+            };
+
+            return View("BrandForm", model);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Brand brand)
         {
             if (!ModelState.IsValid)
-            {
-                
+            {                
                 return View("BrandForm", brand);
             }
 

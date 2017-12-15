@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201712150044062_PopulatePhoneTypeTable.Designer.cs">
       <DependentUpon>201712150044062_PopulatePhoneTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712150107320_fixProblemDateReleasedInPhoneTable.cs" />
+    <Compile Include="Migrations\201712150107320_fixProblemDateReleasedInPhoneTable.Designer.cs">
+      <DependentUpon>201712150107320_fixProblemDateReleasedInPhoneTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -309,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712150044062_PopulatePhoneTypeTable.resx">
       <DependentUpon>201712150044062_PopulatePhoneTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712150107320_fixProblemDateReleasedInPhoneTable.resx">
+      <DependentUpon>201712150107320_fixProblemDateReleasedInPhoneTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

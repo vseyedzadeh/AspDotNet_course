@@ -15,5 +15,6 @@ namespace Phono.Models
         public string BrandName { get; set; }
         
         public string CountryOfOrigin { get; set; }
+        
     }
 }

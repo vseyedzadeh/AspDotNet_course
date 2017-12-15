@@ -19,6 +19,7 @@ namespace Phono.Models
         [Display(Name = "Brand")]
         public int BrandId { get; set; }
 
+        [Required]
         [Display(Name = "Date Released")]
         public DateTime? DateReleased { get; set; }
 
